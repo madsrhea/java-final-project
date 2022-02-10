@@ -6,14 +6,14 @@ public class App {
     public static void main(String[] args) 
     {
        Scanner sc = new Scanner(System.in);
-       System.out.println("How many gallons?");
+       System.out.println("How much do you weigh?");
 
        try{
-            double gallons = sc.nextDouble();
-            double liters = gallons * 3.78541;
+            double weight = sc.nextDouble();
+            double moonWeight = weight * .17;
             DecimalFormat df = new DecimalFormat("#.00");
-            String litersStr = df.format(liters);
-            System.out.println(gallons + " gallons is the same as " + liters + " liters." );
+            String Str = df.format(moonWeight);
+            System.out.println("You [" + weight + " pounds] would weigh [" + Str + " pounds] on the moon!");
        } catch(InputMismatchException e) {
             System.out.println("Invalid input. Please try again.");
        }
