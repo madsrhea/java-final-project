@@ -9,3 +9,6 @@ Between my two classes, I believe my understanding of Github, the terminal, and 
 ## Chapter 1
 
 As we build up our program, in seperated parts unlike my *.NET* class, I'm excited to learn more in depth about how the different parts interact and how I can interact with them.  Though, something I definitely need to work on is remembering the different prompts to print in the different languages. While Java's `System.out.println()` seems to be the easiest of the bunch for me to remember, I still found myself typing in *Javascript*'s `Console.log()`, *C#*'s `Console.WriteLine()`, and even *Python*'s `print()` often enough that it was an issue.
+
+## Chapter 2
+Something else that's pretty nice about learning multiple programming languages at the same time is that the data values rarely differ between them, which makes learning them all together seem less daunting seperately. However, the negative of that is, where it *does* differ, it's harder to remember the language it's used in. Something interesting that I enjoyed, though, is I've known about the `if (x && y)` boolean deal for a while but never knew about the reversing of it ( i.e. `x && y == !(x || y)` ), which is something that's been present since I started taking classes in programming last year. I guess there's always things to learn.
