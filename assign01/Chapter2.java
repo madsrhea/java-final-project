@@ -61,7 +61,7 @@ public class Chapter2 implements TaskHandler {
         System.out.println("The two numbers after the decimal are: " + (int)afterDecNumber);
     }
 
-
+// in class work
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Prime Numbers");
         for(int num = 2; num < 100; num++) 
