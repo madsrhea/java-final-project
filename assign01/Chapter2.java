@@ -61,20 +61,48 @@ public class Chapter2 implements TaskHandler {
         System.out.println("The two numbers after the decimal are: " + (int)afterDecNumber);
     }
 
-    // you're here, mads
 
     public void exercise3(Scanner in) {
-        System.out.println("This segment has been left intentionally blank.");
+        UIUtility.showMenuTitle("Prime Numbers");
+        for(int num = 2; num < 100; num++) 
+        {
+            boolean isPrime = true;
+            if(num % 2 == 0)
+            {
+                isPrime = false;
+            }
+            else
+            {
+                for(int i = 3; i <= num; i += 2)
+                {
+                    if(num % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrime)
+            {
+                System.out.printf(num + " ");
+            }
+        }
     }
 
     public void exercise4(Scanner in) {
         UIUtility.showMenuTitle("Seconds To Days");
-        int seconds = InputUtility.getInt("Enter the number of seconds you wish to process", in);
-        System.out.println("This segment has been left intentionally blank.");
-        }
-
+        int seconds = InputUtility.getInt("Enter your seconds", in);
+        int days = seconds / (24 * 3600);
+            seconds = seconds % (24* 3600);
+        int hours = seconds / 3600;
+            seconds %= 3600;
+        int minutes = seconds / 60;
+            seconds %= 60;
+        System.out.println("Your input amounts to " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds.");
+    }
         
     public void extraCredit(Scanner in) {
+        UIUtility.showMenuTitle("Exercise 2 - Extra Credit");
         System.out.println("This segment has been left intentionally blank.");
 }
 
