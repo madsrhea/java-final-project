@@ -1,0 +1,7 @@
+{
+    "codetogether.virtualCursorJoin": "sharedVirtualCursor",
+    "java.project.sourcePaths": [
+        "assign01",
+        ""
+    ]
+}
