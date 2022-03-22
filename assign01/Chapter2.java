@@ -33,7 +33,7 @@ public class Chapter2 implements TaskHandler {
             }
             UIUtility.pressEnterToContinue(in);
         }
-        System.out.println("\nExiting Chapter 1 Menu.");
+        System.out.println("\nExiting Chapter 2 Menu.");
     }
 
     public void exercise1(Scanner in) {
@@ -64,6 +64,7 @@ public class Chapter2 implements TaskHandler {
 // in class work
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Prime Numbers");
+        
         for(int num = 2; num < 100; num++) 
         {
             boolean isPrime = true;
@@ -84,7 +85,7 @@ public class Chapter2 implements TaskHandler {
             }
             if (isPrime)
             {
-                System.out.printf(num + " ");
+                System.out.print(num + " ");
             }
         }
     }
