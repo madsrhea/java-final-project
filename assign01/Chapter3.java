@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.util.InputMismatchException;
 
 public class Chapter3 implements TaskHandler {
     @Override
@@ -68,32 +69,71 @@ public class Chapter3 implements TaskHandler {
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Sum - Count - Average");
-        String userNum = InputUtility.getString("Please input a number [Enter \"S\" to stop]", in);
         int sumNum = 0;
-        int number = Integer.parseInt(userNum);
         int count = 0;
         int maxNum = Integer.MIN_VALUE;
         int minNum = Integer.MAX_VALUE;
 
+        String input = InputUtility.getString("Please enter a number", in);
+        in.nextLine();
+
+        while (!input.equals("S".toLowerCase()))
+        {
+            try
+            {   
+                Integer.parseInt(input);
+            }
+            catch(NumberFormatException ex)
+            {
+                
+            }
+
     }
 
+        
+
+
+
+        
+    }
+
+    // in-class work
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Random Dozen");
         Random random = new Random();
         int num1 = random.nextInt(12);
         int num2 = random.nextInt(12);
-        int attemptLeft = 3;
-        int mathQuest = InputUtility.getInt("What is " + num1 + " x " + num2 + "?", in);
+        System.out.println("What is " + num1 + " x " + num2 + "?");
+        boolean correct = false;
 
-        if (mathQuest == (num1 * num2)) {
-            System.out.println("Correct!");
-        } 
-        if (mathQuest != (num1 * num2)) {
-            attemptLeft -= 1;
-            System.out.println("Incorrect. You have " + attemptLeft + " attempt(s) remaining.\n");
-            mathQuest = InputUtility.getInt("What is " + num1 + " x " + num2 + "?", in);
+        for(int i = 3; i > 0;)
+        {
+            int input = in.nextInt();
+            in.nextLine();
+            if(input == (num1 * num2))
+            {
+                correct = true;
+                break;
+            } else
+            {
+                i--;
+                if(i == 0)
+                {
+                    break;
+                }
+                String attempts = i == 1 ? "attempt" : "attempts";
+                System.out.printf("Incorrect, you have %d %s remaining%n", i, attempts);
+            }
+
         }
-
+        if(correct)
+        {
+            System.out.println("Correct!");
+        }
+        else
+        {
+            System.out.printf("Incorrect. The answer was %d", (num1 * num2));
+        }
     }
 
 }

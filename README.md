@@ -12,3 +12,7 @@ As we build up our program, in seperated parts unlike my *.NET* class, I'm excit
 
 ## Chapter 2
 Something else that's pretty nice about learning multiple programming languages at the same time is that the data values rarely differ between them, which makes learning them all together seem less daunting seperately. However, the negative of that is, where it *does* differ, it's harder to remember the language it's used in. Something interesting that I enjoyed, though, is I've known about the `if (x && y)` boolean deal for a while but never knew about the reversing of it ( i.e. `x && y == !(x || y)` ), which is something that's been present since I started taking classes in programming last year. I guess there's always things to learn.
+
+## Chapter 3
+
+## Chapter 4
