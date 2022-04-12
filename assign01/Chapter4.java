@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+import javax.swing.event.SwingPropertyChangeSupport;
+
+import java.math.BigInteger;
+
 public class Chapter4 implements TaskHandler {
     @Override
 
@@ -48,7 +52,7 @@ public class Chapter4 implements TaskHandler {
     }
 
 ////// FRACTION CLASS -- PART 1 ////////////////////
-public class Fraction{
+public static class Fraction{
     public int numerator;
     public int denominator;
 
@@ -65,22 +69,143 @@ public class Fraction{
     }
 
     ////// FRACTION CLASS -- PART 2 ////////////////////
-    public void Fraction(int num, int denom)
+    public Fraction(int numerator, int denominator)
     {
-        num = this.numerator;
-        denom = this.denominator;
-        
+        validateDenominator(denominator);
+        this.numerator = numerator;
+        this.denominator = denominator;
+
+    }
+
+    public int getNumerator()
+    {
+        return numerator;
+    }
+
+    public void setNumerator(int numerator)
+    {
+        this.numerator = numerator;
+    }
+
+    public int getDemoninator()
+    {
+        return denominator;
+    }
+
+    public void setDenominator(int denominator)
+    {
+        validateDenominator(denominator);
+        this.denominator = denominator;
     }
 
     ////// FRACTION CLASS -- PART 3 ////////////////////
+    private void validateDenominator(int num) throws IllegalArgumentException
+    {
+        if(num == 0)
+        {
+           throw new IllegalArgumentException();
+        }
+    }
+
     ////// FRACTION CLASS -- PART 4 ////////////////////
+    public static int greatestCommonDivisor(int num1, int num2)
+    {   if (num2 == 0)
+        {
+            return num1;
+        }
+		return (num1 == 0) ? num1 : greatestCommonDivisor(num2, num1 % num2);
+    }
+
+
     ////// FRACTION CLASS -- PART 5 ////////////////////
+    public Fraction simplify()
+    {
+        int gcd = greatestCommonDivisor(getNumerator(), getDemoninator());
+        while (gcd != 0)
+        {
+        int num2 = getDemoninator() / gcd;
+        int num1 = getNumerator() / gcd;
+
+        if ((num1 >= 0 && num2 < 0) || (num1 < 0 && num2 < 0))
+        {
+            num1 = num1 * -1;
+            num2 = num2 * -1;
+        }
+
+        Fraction simpFrac = new Fraction(num1, num2);
+
+        return simpFrac;
+    }
+        return null;
+    }
+
+
+
     ////// FRACTION CLASS -- PART 6 ////////////////////
+  
+    private String mixedNumber() 
+    {
+        Fraction simplified = simplify();
+
+        if(simplified.denominator == 1)
+            {
+                return Integer.toString(simplified.numerator);
+            }
+            else if (simplified.numerator == 0)
+            {
+                return "0";
+            }
+            else if(simplified.numerator > simplified.denominator)
+            {
+                int mixedNumber = numerator / denominator;
+                int mixedFraction = numerator % denominator;
+                return (mixedNumber + " " + mixedFraction + "/" + simplified.denominator);
+            }
+            else if (simplified.numerator < 0)
+            {
+                int mixedNumber = numerator / denominator;
+                int mixedFraction = numerator % denominator;
+                int makePositive = mixedFraction * -1;
+                return (mixedNumber + " " + makePositive + "/" + simplified.denominator);
+            }
+            else
+            {
+            return simplified.toString();
+            }
+    }
 
     ////// FRACTION CLASS -- PART 7 ////////////////////
+    public String add(Fraction other)
+    {   
+       Fraction fraction = new Fraction();
+     
+       int a = fraction.numerator;
+       int b = fraction.denominator;
+       int c = other.numerator;
+       int d = other.denominator;
+
+       fraction.numerator = ((a * b) + (c * d));
+       fraction.denominator = (b * d);
+
+       return (fraction.mixedNumber() + " + " + other.mixedNumber() + " = " + (fraction.mixedNumber() + other.mixedNumber()));
+    }
+
+
+
+
     ////// FRACTION CLASS -- PART 8 ////////////////////
 
 }
+
+/////////////////////////////////////////////////////////////
+////////////////// END OF FUNCTION CLASS ////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////// START OF EXERCISES //////////////////////
+/////////////////////////////////////////////////////////////
+
+
+
     // Exercise 1
     public void exercise1(Scanner in) {
         UIUtility.showMenuTitle("Exercise 1");
@@ -90,43 +215,95 @@ public class Fraction{
 
     public void exercise2(Scanner in) {
         UIUtility.showMenuTitle("Exercise 2");
+        Fraction fraction = new Fraction(27, 6);
+        System.out.println(fraction.getNumerator());
+        System.out.println(fraction.getDemoninator());
+        fraction.setNumerator(30);
+        fraction.setDenominator(45);
+        System.out.println(fraction);
     }
 
     public void exercise3(Scanner in) {
         UIUtility.showMenuTitle("Exercise 3");
-        double numberPi = 3.14;
-        double userRadius = InputUtility.getDouble("Give me the radius of your circle", in);
-        double circum = 2 * numberPi * userRadius;
-        double area = numberPi * Math.pow(userRadius, 2);
-        System.out.println();
-        System.out.printf("Your circumfrerence woud be %.2f", circum);
-        System.out.printf(" and your area would be %.2f!", area);
-        System.out.println();
+        IllegalArgumentException iae = new IllegalArgumentException("Denominator cannot be zero.");
+        try 
+        {
+            Fraction fraction = new Fraction(3,0);
+
+        } 
+        catch (Exception up) 
+        {
+            System.out.println(iae.getMessage());
+        }
+       Fraction fracshawn = new Fraction();
+       
+       try 
+       {
+           fracshawn.setDenominator(0);
+       }
+       catch (Exception up) 
+       {
+            System.out.println(iae.getMessage());
+       }
     }
 
     public void exercise4(Scanner in) {
-      
-        
+        UIUtility.showMenuTitle("Exercise 4");
+        System.out.println(Fraction.greatestCommonDivisor(75,45));
+        System.out.println(Fraction.greatestCommonDivisor(2, 4));
+        System.out.println(Fraction.greatestCommonDivisor(5, 7));
     }
 
     public void exercise5(Scanner in) {
-        UIUtility.showMenuTitle("Get Largest Number");
-        System.out.println("Hey, I can tell you which of two numbers is bigger! Watch!");
-        
+        UIUtility.showMenuTitle("Exercise 5");
+        Fraction newNum1 = new Fraction(75, 45);
+        System.out.println(newNum1.simplify()); // 5/3
+        Fraction newNum2 = new Fraction(2,4);
+        System.out.println(newNum2.simplify()); // 1/2
+        Fraction newNum3 = new Fraction(5,7);
+        System.out.println(newNum3.simplify()); // 5/7
+        Fraction newNum4 = new Fraction(-2, 4);
+        System.out.println(newNum4.simplify()); // -1/2
+        Fraction newNum5 = new Fraction(2, -4);
+        System.out.println(newNum5.simplify()); // -1/2
+        Fraction newNum6 = new Fraction(-2, -4);
+        System.out.println(newNum6.simplify()); // 1/2
+
+       
     }
     public void exercise6(Scanner in) {
-        UIUtility.showMenuTitle("Get Largest Number");
-        System.out.println("Hey, I can tell you which of two numbers is bigger! Watch!");
-        
+        UIUtility.showMenuTitle("Exercise 6");
+        Fraction newNum1 = new Fraction(4,1);
+        Fraction newNum2 = new Fraction(0,4); 
+        Fraction newNum3 = new Fraction(4,4);
+        Fraction newNum4 = new Fraction(8,4); 
+        Fraction newNum5 = new Fraction(4,8); 
+        Fraction newNum6 = new Fraction(13,5);
+        Fraction newNum7 = new Fraction(-13, 5);  
+        Fraction newNum8 = new Fraction(13,-5); 
+        Fraction newNum9 = new Fraction(-13,-5); 
+        System.out.println(newNum1.mixedNumber()); // 4
+        System.out.println(newNum2.mixedNumber()); // 0
+        System.out.println(newNum3.mixedNumber()); // 1
+        System.out.println(newNum4.mixedNumber());// 2
+        System.out.println(newNum5.mixedNumber()); // 1/2
+        System.out.println(newNum6.mixedNumber()); // 2 3/5
+        System.out.println(newNum7.mixedNumber()); // -2 3/5
+        System.out.println(newNum8.mixedNumber()); // -2 3/5
+        System.out.println(newNum9.mixedNumber()); // 2 3/5
     }
+
     public void exercise7(Scanner in) {
-        UIUtility.showMenuTitle("Get Largest Number");
-        System.out.println("Hey, I can tell you which of two numbers is bigger! Watch!");
-        
+        UIUtility.showMenuTitle("Exercise 7");
+        Fraction newNum1 = new Fraction(12 , 5);
+        Fraction newNum2 = new Fraction(4 , 8);
+        System.out.println(newNum1.add(newNum2)); // 2 3/5 + 1/2 = 3 1/10
+        Fraction newNum3 = new Fraction(-13, -5);
+        Fraction newNum4 = new Fraction(13 , -5);
+        System.out.println(newNum3.add(newNum4)); // 2 3/5 + -2 3/5 = 0
     }
     public void exercise8(Scanner in) {
-        UIUtility.showMenuTitle("Get Largest Number");
-        System.out.println("Hey, I can tell you which of two numbers is bigger! Watch!");
+        UIUtility.showMenuTitle("Exercise 8");
         
     }
 }
