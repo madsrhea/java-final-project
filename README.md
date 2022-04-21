@@ -30,8 +30,13 @@ I worry this project may be too ambitious, but it's a project I had previously s
 
 ### <u>User Cases</u>
 
-* Pick up and carry various items within inventory, which will be compartmentalized. (MVP)
-* Use tools against the enviorment (MVP)
-* Examine various things within enviorment for clues (MVP)
-* Have an objective that updates as the player progresses (MVP)
+* Pick up and carry various items within inventory, which will be compartmentalized by catagory. (MVP)
+* Use inventory against other items within the enviorment (MVP)
+* Solve problems / create own tools by combining objects from inventory. (MVP)
+* Examine surroundings for clues (MVP)
+* Have an objective that updates as the player progresses [Player can view complete, current or both] (MVP)
+* Remove items from the room and add them to player inventory. (MVP)
 * Print ASCII art to assist player in visualiziation (Stretch Goal)
+* Update ASCII art with changes made to enviorment. (Stretch Goal)
+* Add notes to report of things seen. (Stretch Goal)
+* Add visual component to inventory (Stretch Goal)
