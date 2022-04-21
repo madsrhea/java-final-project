@@ -26,7 +26,7 @@ Something else that's pretty nice about learning multiple programming languages 
 
 The idea I have for my final project is a survival/puzzle text-based adventure. The player finds themselves within a seemingly abandoned base, trying to gain access to parts blocked off and piece together what left the place in such a state of dissarray. To do so, they will have to solve various logic puzzles and examine their surroundings to understand what happened. They will be able to carry items along with them and try using / combining them with other items. ASCII art will be printed to help the player visualize their enviorment.
 
-I worry this project may be too ambitious, but it's a project I had previously started working on in Python and love puzzle games so I have the general layout and what I want and where.
+I worry this project may be too ambitious, but it's a project I had previously started working on in Python and love puzzle games so I have the general layout and what I want and where - It's just the matter of putting it together.
 
 ### <u>User Cases</u>
 
