@@ -14,5 +14,24 @@ As we build up our program, in seperated parts unlike my *.NET* class, I'm excit
 Something else that's pretty nice about learning multiple programming languages at the same time is that the data values rarely differ between them, which makes learning them all together seem less daunting seperately. However, the negative of that is, where it *does* differ, it's harder to remember the language it's used in. Something interesting that I enjoyed, though, is I've known about the `if (x && y)` boolean deal for a while but never knew about the reversing of it ( i.e. `x && y == !(x || y)` ), which is something that's been present since I started taking classes in programming last year. I guess there's always things to learn.
 
 ## Chapter 3
+<i>TBA</i>
 
 ## Chapter 4
+<i>TBA</i>
+
+## Chapter 5
+<i>TBA</i>
+
+## Final Project
+
+The idea I have for my final project is a survival/puzzle text-based adventure. The player finds themselves within a seemingly abandoned base, trying to gain access to parts blocked off and piece together what left the place in such a state of dissarray. To do so, they will have to solve various logic puzzles and examine their surroundings to understand what happened. They will be able to carry items along with them and try using / combining them with other items. ASCII art will be printed to help the player visualize their enviorment.
+
+I worry this project may be too ambitious, but it's a project I had previously started working on in Python and love puzzle games so I have the general layout and what I want and where.
+
+### <u>User Cases</u>
+
+* Pick up and carry various items within inventory, which will be compartmentalized. (MVP)
+* Use tools against the enviorment (MVP)
+* Examine various things within enviorment for clues (MVP)
+* Have an objective that updates as the player progresses (MVP)
+* Print ASCII art to assist player in visualiziation (Stretch Goal)
