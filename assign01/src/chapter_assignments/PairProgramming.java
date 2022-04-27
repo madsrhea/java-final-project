@@ -1,8 +1,34 @@
-// Code made by Mads Rhea && Alex Korte!
-
+package src.chapter_assignments;
 import java.util.Scanner;
 
-public class PairProgramming {
+import utilities.TaskHandler;
+import utilities.UIUtility;
+import utilities.InputUtility;
+public class PairProgramming implements TaskHandler {
+    @Override
+    public void handleTask(Scanner in) {
+        int choice = 0;
+        while (true) {
+            String menuTitle = "Pair Programming Menu";
+            String prompt = "Select an exercise";
+            String[] menuOptions = {
+                    "Coordinates"
+            };
+            choice = UIUtility.showMenuOptions(menuTitle, prompt, menuOptions, in);
+            if (choice == 0)
+                continue;
+            if (choice == menuOptions.length + 1)
+                break;
+            switch (choice) {
+                case 1:
+                    
+                
+            }
+            UIUtility.pressEnterToContinue(in);
+        }
+        System.out.println("\nExiting 'Pair Programming' Menu.");
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

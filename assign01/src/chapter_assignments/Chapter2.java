@@ -1,5 +1,9 @@
+package src.chapter_assignments;
 import java.util.Scanner;
 
+import utilities.TaskHandler;
+import utilities.UIUtility;
+import utilities.InputUtility;
 public class Chapter2 implements TaskHandler {
     @Override
     public void handleTask(Scanner in) {

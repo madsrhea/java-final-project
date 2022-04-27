@@ -1,6 +1,11 @@
+package src.chapter_assignments;
 import java.util.Scanner;
 import java.util.Random;
-import java.util.InputMismatchException;
+
+import utilities.TaskHandler;
+import utilities.UIUtility;
+import utilities.InputUtility;
+
 
 public class Chapter3 implements TaskHandler {
     @Override

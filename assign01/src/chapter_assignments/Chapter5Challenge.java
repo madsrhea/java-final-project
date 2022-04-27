@@ -1,7 +1,10 @@
+package src.chapter_assignments;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
+import utilities.TaskHandler;
+import utilities.UIUtility;
+import utilities.InputUtility;
 public class Chapter5Challenge implements TaskHandler {
     @Override
     public void handleTask(Scanner in) {
@@ -36,7 +39,7 @@ public class Chapter5Challenge implements TaskHandler {
             }
             UIUtility.pressEnterToContinue(in);
         }
-        System.out.println("\nExiting Chapter 2 Menu.");
+        System.out.println("\nExiting 'Chapter 5 Challenge' Menu.");
     }
 // Done 
     public void task1(Scanner in) {

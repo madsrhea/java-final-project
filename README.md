@@ -40,3 +40,12 @@ I worry this project may be too ambitious, but it's a project I had previously s
 * Update ASCII art with changes made to enviorment. (Stretch Goal)
 * Add notes to report of things seen. (Stretch Goal)
 * Add visual component to inventory (Stretch Goal)
+
+| + Player  |
+|---|
+|- Name: String | 
+|- Inventory: int[] array| 
+|---|
+|<<create>> +Player()|
+|<<create>> +Person(name: String, inventory: int[]|
+||
