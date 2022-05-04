@@ -15,10 +15,10 @@ public class UIUtility {
         showMenuTitle(menuTitle);
         int count = 1;
         for (String menuOption : menuOptions) {
-            System.out.println(count++ + ": " + menuOption);
+            System.out.println(count++ + ") " + menuOption);
         }
-        System.out.println(count + ": Exit");
-        System.out.print("\n" + prompt + ": ");
+        System.out.println(count + ") Exit");
+        System.out.print("\n" + prompt + ". . . ");
         String input = in.nextLine().trim();
         int result = validateIntInput(input, menuOptions.length + 1, in);
         return result;
@@ -42,7 +42,7 @@ public class UIUtility {
      * @param menuTitle the text of the title
      */
     public static void showMenuTitle(String menuTitle) {
-        System.out.println("\n" + "xxx " + menuTitle + " xxx\n");
+        System.out.println("\n" + ". . .. .: :: " + menuTitle + " :: :. .. . .\n");
     }
 
     /**
