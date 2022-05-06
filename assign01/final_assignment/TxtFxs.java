@@ -31,7 +31,7 @@ public class TxtFxs {
                         + "\t\t| /                  \\       |\n"
                         + "\t\t| |                  |  (\\)  |\n"
                         + "\t\t| |                  |       |\n"
-                        + "\t\t| |                  |  (-)  |\n"
+                        + "\t\t| |   _       _      |  (-)  |\n"
                         + "\t\t| |   ==      ==     |       |\n"
                         + "\t\t| \\     ▄▄▄▄         / :|||: |\n"
                         + "\t\t|  -ooo--------------  :|||: |\n"
@@ -147,6 +147,18 @@ public class TxtFxs {
                         + "\t\t|  -ooo--------------  :|||: |\n"
                         + "\t\t+----------------------------+\n");
                 break;
+                case 12:
+                computerFace = ("\t\t+--------------v-------------+\n"
+                        + "\t\t|  __________________      @ |\n"
+                        + "\t\t| /                  \\       |\n"
+                        + "\t\t| |                  |  (\\)  |\n"
+                        + "\t\t| |       ||     ||  |       |\n"
+                        + "\t\t| |          ▄▄▄     |  (-)  |\n"
+                        + "\t\t| |                  |       |\n"
+                        + "\t\t| \\                  / :|||: |\n"
+                        + "\t\t|  -ooo--------------  :|||: |\n"
+                        + "\t\t+----------------------------+\n");
+                break;
 
         }
         return computerFace;
@@ -196,30 +208,32 @@ public class TxtFxs {
         
     }
 
+    public static void NPCNoScanner(int expression, String words, int time)
+    {
+        System.out.println(cleanUp);
+        System.out.print(ComputerExpressions(expression));
+            if(time != 12 && time != 11)
+            {System.out.println(chatBox+"\n");}
+        TextSpeed(words, time);
+            if(time != 12 && time != 9)
+            {System.out.println(nextArrow);}
+    }
+
     public static void CompileNPC(int expression, String words, int time, Scanner scn)
     {
         System.out.println(cleanUp);
         System.out.print(ComputerExpressions(expression));
-            if(time != 22 && time != 21)
+            if(time != 12 && time != 11)
             {System.out.println(chatBox+"\n");}
         TextSpeed(words, time);
-            if(time != 22 && time != 19)
+            if(time != 12 && time != 9)
             {System.out.println(nextArrow);}
         scn.nextLine();
     }
 
-    public static void CompileNPC(int expression, String words, int time)
-    {
-        System.out.println(cleanUp);
-        System.out.print(ComputerExpressions(expression));
-            if(time != 22 && time != 21)
-            {System.out.println(chatBox+"\n");}
-        TextSpeed(words, time);
-            if(time != 22 && time != 19)
-            {System.out.println(nextArrow);}
-    }
 
-    public static void CompileNPC(String array, int expression, String words, int time, Scanner scn)
+
+    public static void NPCArray(String array, int expression, String words, int time, Scanner scn)
     {
         System.out.println(cleanUp);
         System.out.println("\n\n"+array+"\n\n");
@@ -231,8 +245,18 @@ public class TxtFxs {
             {System.out.println(nextArrow);}
         scn.nextLine();
     }
+    
+    public static void NPCArrayName(Person person, String array, int expression, String words, int time, Scanner scn)
+    {
+        System.out.println(cleanUp);
+        System.out.println("\t\t" + person.getFirstName().toUpperCase() + " " + person.getLastName().toUpperCase() + "'S FLASH DRIVE.");
+        System.out.println("\n\n\t"+array+"\n\n");
+        System.out.print(ComputerExpressions(expression));
+            if(time != 12 && time != 11)
+            {System.out.println(chatBox+"\n");}
+        TextSpeed(words, time);
+            if(time != 12 && time != 9)
+            {System.out.println(nextArrow);}
+        scn.nextLine();
+    }
 }
-
-// run text until end of sentence
-// show symbol to prompt user to hit enter to continue
-// run next block of text

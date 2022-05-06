@@ -1,10 +1,10 @@
 package final_assignment;
-public class Person {
+
+public class Person implements Comparable<Person> {
 
     private String firstName;
     private String lastName;
     private int age;
-    private static Person[] personArray = new Person[5];
 
     private String cleanUp = "\033[H\033[2J";
 
@@ -77,57 +77,15 @@ public class Person {
     {
         if(input >= 100 || input <= 0)
         {
-            throw new IllegalArgumentException("there's no way ..... enter your actual age.\n(well, anything between 0 - 100)");
+            throw new IllegalArgumentException(cleanUp + "there's no way ..... enter your actual age.\n(well, anything between 0 - 100)");
         }
 
     }
 
-    public static Person[] getArray()
-    {
-        return personArray;
+    @Override
+    public int compareTo(Person o) {
+        // TODO Auto-generated method stub
+        return 0;
     }
-
-    public static Person[] addToArray(Person input)
-    {
-        for(int i = 0; i < personArray.length; i++)
-        {
-            if(personArray[i] == null)
-            {
-                personArray[i] = input;
-                break;
-            }
-        }
-
-        return personArray;
-
-    }
-
-
-    public String toString() {
-        return firstName.toUpperCase() + " " + lastName.toUpperCase() + " (" + age + ")";
-    }
-
-    public static String printArray(Person[] input)
-    {
-        String str = "[ ";
-        String[] array = new String[input.length];
-        for(int i = 0; i < input.length; i++)
-        {
-            if(input[i] != null)
-            {
-                array[i] = "" + input[i];
-                str += input[i];
-                if (input[i+1] != null && i + 1 < input.length)
-                {  
-                    str += ", ";
-                }
-            }
-        }
-        str += " ]";
-
-        return str;
-
-    }
-
 
 }

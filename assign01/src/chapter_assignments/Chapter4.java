@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import utilities.TaskHandler;
 import utilities.UIUtility;
+import utilities.TaskHandler;
 
 public class Chapter4 implements TaskHandler {
     @Override
@@ -282,6 +283,8 @@ public static class Fraction{
         Fraction newNum7 = new Fraction(-13, 5);  
         Fraction newNum8 = new Fraction(13,-5); 
         Fraction newNum9 = new Fraction(-13,-5); 
+        Fraction fraction10 = new Fraction(-2, 3);
+        
         System.out.println(newNum1.mixedNumber()); // 4
         System.out.println(newNum2.mixedNumber()); // 0
         System.out.println(newNum3.mixedNumber()); // 1
@@ -291,6 +294,7 @@ public static class Fraction{
         System.out.println(newNum7.mixedNumber()); // -2 3/5
         System.out.println(newNum8.mixedNumber()); // -2 3/5
         System.out.println(newNum9.mixedNumber()); // 2 3/5
+        System.out.println(fraction10.mixedNumber());
     }
 
     public void exercise7(Scanner in) {
