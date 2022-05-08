@@ -1,15 +1,15 @@
 package final_assignment;
 
-public class TextFile extends File {
+public class CompTextFile extends CompFile {
     private int pageNum;
 
-    public TextFile()
+    public CompTextFile()
     {
         super();
         pageNum = -1;
     }
 
-    public TextFile(String fileName, int pageNum)
+    public CompTextFile(String fileName, int pageNum)
     {
         super(fileName);
         setPages(pageNum);

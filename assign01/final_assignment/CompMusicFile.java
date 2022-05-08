@@ -1,17 +1,17 @@
 package final_assignment;
 
-public class MusicFile extends File {
+public class CompMusicFile extends CompFile {
     private int songLength;
     private Person artist;
 
-    public MusicFile()
+    public CompMusicFile()
     {
         super();
         songLength = -1;
         artist = new Person();
     }
 
-    public MusicFile(String fileName, int songLength, Person artist)
+    public CompMusicFile(String fileName, int songLength, Person artist)
     {
         super(fileName);
         setSongLength(songLength);

@@ -1,18 +1,18 @@
 package final_assignment;
 
-public class File {
+public class CompFile {
     
     private String fileName;
-    public static File[] fileArray = new File[5];
+    public static CompFile[] fileArray = new CompFile[5];
 
     private String cleanUp = "\033[H\033[2J";
 
-    public File()
+    public CompFile()
     {
         fileName = "N/A";
     }
 
-    public File(String fileName)
+    public CompFile(String fileName)
     {
        setFileName(fileName);
     }
@@ -37,12 +37,12 @@ public class File {
     
     }
 
-    public static File[] getFileArray()
+    public static CompFile[] getFileArray()
     {
         return fileArray;
     }
 
-    public static String printFileArray(File[] input)
+    public static String printFileArray(CompFile[] input)
     {
         String str = "[ ";
         for(int i = 0; i < input.length; i++)
