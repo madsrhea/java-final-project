@@ -24,7 +24,7 @@ public class FinalApp {
                     Computer.convo1(scanner);
                     break;
                 case 2:
-                    Computer.testCenter(scanner);
+                   
                     break;
             }
             UIUtility.pressEnterToContinue(scanner);

@@ -23,12 +23,12 @@ public class CompTextFile extends CompFile {
     public void setPages(int pageNum)
     {
         validatePages(pageNum);
-        setPages(pageNum);
+        this.pageNum = pageNum;
     }
 
     public void validatePages(int pageNum)
     {
-        if(pageNum >= 0)
+        if(pageNum <= 0)
         {
             throw new IllegalArgumentException("PAGE NUMBER IS REQUIRED FOR TEXT FILES.");
         }

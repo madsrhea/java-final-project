@@ -1,6 +1,6 @@
 package final_assignment;
 
-public class CompFile {
+public class CompFile implements Comparable<CompFile> {
     
     private String fileName;
     public static CompFile[] fileArray = new CompFile[5];
@@ -65,5 +65,11 @@ public class CompFile {
         str += " ]";
 
         return str;
+    }
+
+    @Override
+    public int compareTo(CompFile o) {
+        // TODO Auto-generated method stub
+        return 0;
     }
 }

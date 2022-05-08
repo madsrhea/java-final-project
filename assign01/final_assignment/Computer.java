@@ -13,22 +13,12 @@ import utilities.UIUtility;
 
 
 public class Computer {
-    private CompFile[] filesArr;
-    private int fileCount = 0;
+
+    private static int fileCount = 0;
 
     public Computer()
     {
-        filesArr = new CompFile[5];
-        filesArr[0] = new CompFile("BLANK.txt"); 
-        fileCount++;
-        filesArr[1] = new CompTextFile("MyNovel.txt", 253);
-        fileCount++;
-        filesArr[2] = new CompTextFile("MyNovel_Draft.txt", 342);
-        fileCount++;
-        filesArr[3] = new CompImgFile("FunDayAtTheBeach.png", 2003);
-        fileCount++;
-        filesArr[4] = new CompImgFile("albumCover.png", 2021);
-        fileCount++;
+        
     }
 
     public boolean isFull()
@@ -132,17 +122,32 @@ public class Computer {
         TxtFxs.NPCArrayName(person, printFileArray, 7, "EMPTY SLOTS READY TO GO.\n++LET'S GET TO ADDING SOME STUFF!", textSpeed, scn);
         TxtFxs.NPCArray(printFileArray,0, "I'VE ALREADY CREATED A COLLECTION OF WHAT I BELIEVE\nARE THE MOST IMPORTANT FILES ON YOUR COMPUTER.", textSpeed, scn);
         TxtFxs.CompileNPC(0, "LET ME JUST ADD THOSE REAL QUICK.", textSpeed, scn);
+        TxtFxs.CompileNPC(10, "ONE MOMENT&", textSpeed, scn);
 
-        CompFile[] fileArr =;
+        fileArray = new CompFile[5];
+        fileArray[0] = new CompFile("BLANK.txt"); 
+        fileCount++;
+        fileArray[1] = new CompTextFile("MyNovel.txt", 253);
+        fileCount++;
+        fileArray[2] = new CompTextFile("MyNovel_Draft.txt", 342);
+        fileCount++;
 
-        String printFilledArray = CompFile.printFileArray(fileArr);
+        TxtFxs.NPCNoScanner(4, "&++&++", textSpeed);
+
+        fileArray[3] = new CompImgFile("FunDayAtTheBeach.png", 2003);
+        fileCount++;
+        fileArray[4] = new CompImgFile("albumCover.png", 2021);
+        fileCount++;
+
+        printFileArray = CompFile.printFileArray(fileArray);
+
+        TxtFxs.NPCArrayName(person, printFileArray, 9, "AH, THERE WE ARE!", textSpeed, scn);
+        
+
     }
 
     
 
-    public static void testCenter(Scanner scn)
-    {
 
-    }
 
 }
