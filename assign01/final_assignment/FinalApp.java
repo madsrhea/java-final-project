@@ -21,7 +21,7 @@ public class FinalApp {
                 break;
             switch (choice) {
                 case 1:
-                    Computer.convo1(scanner);
+                    Computer.convo2(scanner);
                     break;
                 case 2:
                    

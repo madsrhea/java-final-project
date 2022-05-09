@@ -35,5 +35,11 @@ public class CompTextFile extends CompFile {
 
     }
 
+    @Override
+    public String toString()
+    {
+        return String.format("\tTEXT DOCUMENT:\n\t\tFile Name='%s',\n\t\tPage #= %s%n", getFileName(), pageNum);
+    }
+
 
 }

@@ -2,7 +2,7 @@ package final_assignment;
 
 public class CompFile implements Comparable<CompFile> {
     
-    private String fileName;
+    public String fileName;
     public static CompFile[] fileArray = new CompFile[5];
 
     private String cleanUp = "\033[H\033[2J";
@@ -49,11 +49,11 @@ public class CompFile implements Comparable<CompFile> {
         {
             if(input[i] == null)
             {
-               str += "*EMPTY*";
+               str += "\t*EMPTY*";
             }
             else
             {
-                 str += input[i];
+                 str += input[i].toString();
             }
             
             if (i + 1 < input.length)
@@ -65,6 +65,12 @@ public class CompFile implements Comparable<CompFile> {
         str += " ]";
 
         return str;
+    }
+
+    @Override
+    public String toString()
+    {
+        return String.format("\n\tGENERIC FILE:\n\t\tFile Name='%s'\n", fileName);
     }
 
     @Override

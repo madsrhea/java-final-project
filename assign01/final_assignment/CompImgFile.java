@@ -38,5 +38,11 @@ public class CompImgFile extends CompFile
 
     }
 
+    @Override
+    public String toString()
+    {
+        return String.format("\tIMAGE FILE:\n\t\tFile Name='%s'\n\t\tYear Made= %s%n", fileName, dateYear);
+    }
+
 
 }

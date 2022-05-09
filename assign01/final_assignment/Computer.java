@@ -109,7 +109,7 @@ public class Computer {
         return person;
     }
 
-    private static void convo2(Scanner scn)
+    public static void convo2(Scanner scn)
     {
         int textSpeed = 10;
         Person person = action1(scn);
@@ -118,11 +118,11 @@ public class Computer {
 
         String printFileArray = CompFile.printFileArray(fileArray);
 
-        TxtFxs.NPCArrayName(person, printFileArray, 7, "YUP+, " + userName + "+, THIS IS YOUR STUFF ALRIGHT.", textSpeed, scn);
-        TxtFxs.NPCArrayName(person, printFileArray, 7, "EMPTY SLOTS READY TO GO.\n++LET'S GET TO ADDING SOME STUFF!", textSpeed, scn);
-        TxtFxs.NPCArray(printFileArray,0, "I'VE ALREADY CREATED A COLLECTION OF WHAT I BELIEVE\nARE THE MOST IMPORTANT FILES ON YOUR COMPUTER.", textSpeed, scn);
-        TxtFxs.CompileNPC(0, "LET ME JUST ADD THOSE REAL QUICK.", textSpeed, scn);
-        TxtFxs.CompileNPC(10, "ONE MOMENT&", textSpeed, scn);
+        // TxtFxs.NPCArrayName(person, printFileArray, 7, "YUP+, " + userName + "+, THIS IS YOUR STUFF ALRIGHT.", textSpeed, scn);
+        // TxtFxs.NPCArrayName(person, printFileArray, 7, "EMPTY SLOTS READY TO GO.\n++LET'S GET TO ADDING SOME STUFF!", textSpeed, scn);
+        // TxtFxs.NPCArray(printFileArray,0, "I'VE ALREADY CREATED A COLLECTION OF WHAT I BELIEVE\nARE THE MOST IMPORTANT FILES ON YOUR COMPUTER.", textSpeed, scn);
+        // TxtFxs.CompileNPC(0, "LET ME JUST ADD THOSE REAL QUICK.", textSpeed, scn);
+        // TxtFxs.CompileNPC(10, "ONE MOMENT&", textSpeed, scn);
 
         fileArray = new CompFile[5];
         fileArray[0] = new CompFile("BLANK.txt"); 
@@ -134,15 +134,15 @@ public class Computer {
 
         TxtFxs.NPCNoScanner(4, "&++&++", textSpeed);
 
-        fileArray[3] = new CompImgFile("FunDayAtTheBeach.png", 2003);
-        fileCount++;
-        fileArray[4] = new CompImgFile("albumCover.png", 2021);
+        fileArray[3] = new CompImgFile((person.getFirstName() + "sDayAtTheBeach.png"), 2003);
         fileCount++;
 
         printFileArray = CompFile.printFileArray(fileArray);
 
-        TxtFxs.NPCArrayName(person, printFileArray, 9, "AH, THERE WE ARE!", textSpeed, scn);
-        
+        TxtFxs.NPCArray(printFileArray, 9, "AH, THERE WE ARE!", textSpeed, scn);
+        TxtFxs.NPCArray(printFileArray, 12, "AS YOU CAN SEE+, ONE OF THE SPOTS IS EMPTY.", textSpeed, scn);
+        TxtFxs.CompileNPC(10, "ALL YOU HAVE TO DO IS TELL ME WHAT'S THE KIND\nOF FILE YOU WANT TO SAVE+ AND WE'LL GET IT'S INFO+\nAND MOVE IT ONTO THE FLASH DRIVE.", textSpeed, scn);
+    
 
     }
 
